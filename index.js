@@ -1,6 +1,6 @@
 const tutorials = [
   'what does the this keyword mean?',
-  'What is the Constructor OO pattern?',
+  'What Is The Constructor OO Pattern?',
   'implementing Blockchain Web API',
   'The Test Driven Development Workflow',
   'What is NaN and how Can we Check for it',
@@ -12,5 +12,14 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  const titleCasedTutorials = tutorials.map((tutorial) => {
+    const words = tutorial.split(" ");
+    const capitalizedWords = words.map((word) =>  {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return  capitalizedWords.join(" ");
+});
+return titleCasedTutorials;
+};
+
+console.log(titleCased());
